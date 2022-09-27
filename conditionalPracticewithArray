@@ -1,0 +1,41 @@
+public class FruitsBasket {
+
+    public static void main(String[] args) {
+        String[] fruitBasket = {"Orange", "Apple", "Orange", "Apple", "Orange", "Apple",
+            "Orange", "Apple", "Orange", "Orange", "Orange", "Apple", "Orange", "Orange",
+            "Apple", "Orange", "Orange", "Apple", "Apple", "Orange", "Apple", "Apple",
+            "Orange", "Orange", "Apple", "Apple", "Apple", "Banana", "Apple", "Orange",
+            "Orange", "Apple", "Apple", "Orange", "Orange", "Orange", "Orange", "Apple",
+            "Apple", "Apple", "Apple", "Orange", "Orange", "PawPaw", "Apple", "Orange",
+            "Orange", "Apple", "Orange", "Orange", "Apple", "Apple", "Orange", "Orange",
+            "Apple", "Orange", "Apple", "Kiwi", "Orange", "Apple", "Orange",
+            "Dragonfruit", "Apple", "Orange", "Orange"};
+
+        int numOranges = 0;
+        int numApples = 0;
+        int numOtherFruit = 0;
+        int total = 0;
+
+        // Fruit counting code goes here!
+        for(String fruit: fruitBasket){
+            if(fruit.equals("Orange")){
+                numOranges ++;
+                total ++;
+            }
+            else if(fruit.equals("Apple")){
+                numApples ++;
+                total++;
+            }else{
+                numOtherFruit ++;
+                total++;
+            }
+        }
+        // Print The Results!
+        System.out.println("There are "+numOranges+" oranges.");
+        System.out.println("There are "+numApples+" apples.");
+        System.out.println("There are " + numOtherFruit +" other fruit.");
+        
+        System.out.println("In total there are "+ total + " fruit in the basket.");
+    }
+    
+}
