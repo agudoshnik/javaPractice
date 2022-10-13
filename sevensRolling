@@ -1,0 +1,39 @@
+import java.util.Random;
+import java.util.Scanner;
+
+public class LuckySevens {
+
+    public static Scanner input = new Scanner(System.in);
+    public static Random randomizer = new Random();
+
+    public static void LuckySevens() {
+
+        System.out.println("How much money will you gamble?");
+        double money = input.nextDouble();
+
+        int rolls = 0;
+        double mostMoney = 0;
+        int bestRoll = 0;
+        int diceOne = 0;
+        int diceTwo = 0;
+
+        while(money > 0){
+            diceOne = randomizer.nextInt(6 - 1 + 1) + 1;
+            diceTwo = randomizer.nextInt(6 - 1 + 1) + 1;
+
+            if(diceOne + diceTwo == 7){
+                money = money + 4;
+                rolls++;
+                if(money > mostMoney) {
+                    mostMoney = money;
+                    bestRoll = rolls;
+                }
+            }else {
+                money = money - 1;
+                rolls++;
+            }
+        }
+        System.out.println("You are broke after " + rolls + " rolls.");
+        System.out.println("You should have quit after "+ bestRoll + " rolls when you had $"+mostMoney+ ".");
+    }
+}
